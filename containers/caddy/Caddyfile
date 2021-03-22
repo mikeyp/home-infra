@@ -1,0 +1,37 @@
+# Plex reverse proxy - not needed but sometimes useful.
+plex.mikeyp.net {
+  tls mike@mikeyp.net
+  proxy / http://127.0.0.1:32400/ {
+    transparent
+    insecure_skip_verify
+  }
+}
+
+# Reverse proxy to Dream Machine setup - one again not required, but useful if ui.com proxy is slow.
+unifi.mikeyp.net {
+  tls mike@mikeyp.net
+  proxy / https://setup.ui.com/ {
+    websocket
+    transparent
+    insecure_skip_verify
+  }
+}
+
+# Homeassistant
+home.mikeyp.net {
+  tls mike@mikeyp.net
+  proxy / http://127.0.0.1:8123/ {
+    websocket
+    transparent
+    insecure_skip_verify
+  }
+}
+
+# Metabase
+data.mikeyp.net {
+  tls mike@mikeyp.net
+  proxy / http://127.0.0.1:3000/ {
+    websocket
+    transparent
+  }
+}

@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  caddy:
+    image: abiosoft/caddy
+    container_name: caddy
+    environment:
+      CADDYPATH: /etc/caddycerts
+      ACME_AGREE: 'true'
+    volumes:
+      - ./Caddyfile:/etc/Caddyfile
+      - ./certs:/etc/caddycerts
+    network_mode: host
+    restart: always
+
+  
+
+  
+
+  
+
+
