@@ -3,6 +3,7 @@ services:
   dyndns:
     image: "oznu/cloudflare-ddns"
     container_name: dyndns
+    env_file: .env
     environment:
       ZONE: 'mikeyp.net'
       SUBDOMAIN: 'home'
