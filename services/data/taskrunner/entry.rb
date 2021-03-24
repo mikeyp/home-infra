@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'rufus-scheduler'
+require 'sequel'
 
 scheduler = Rufus::Scheduler.new
 

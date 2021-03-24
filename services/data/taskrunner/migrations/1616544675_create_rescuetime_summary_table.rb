@@ -1,0 +1,71 @@
+Sequel.migration do
+  change do
+    create_table(:rescuetime_summary) do
+      primary_key :id
+      Date :date
+      Integer :productivity_pulse
+
+      # Percentages
+      Float :very_productive_percentage
+      Float :productive_percentage
+      Float :neutral_percentage
+      Float :distracting_percentage
+      Float :very_distracting_percentage
+      Float :all_productive_percentage
+      Float :all_distracting_percentage
+      Float :uncategorized_percentage
+      Float :business_percentage
+      Float :communication_and_scheduling_percentage
+      Float :social_networking_percentage
+      Float :design_and_composition_percentage
+      Float :entertainment_percentage
+      Float :news_percentage
+      Float :software_development_percentage
+      Float :reference_and_learning_percentage
+      Float :shopping_percentage
+      Float :utilities_percentage
+
+      # Totals
+      Float :total_hours
+      Float :very_productive_hours
+      Float :productive_hours
+      Float :neutral_hours
+      Float :distracting_hours
+      Float :very_distracting_hours
+      Float :all_productive_hours
+      Float :all_distracting_hours
+      Float :uncategorized_hours
+      Float :business_hours
+      Float :communication_and_scheduling_hours
+      Float :social_networking_hours
+      Float :design_and_composition_hours
+      Float :entertainment_hours
+      Float :news_hours
+      Float :software_development_hours
+      Float :reference_and_learning_hours
+      Float :shopping_hours
+      Float :utilities_hours
+
+      # Formatted
+      String :total_duration_formatted
+      String :very_productive_duration_formatted
+      String :productive_duration_formatted
+      String :neutral_duration_formatted
+      String :distracting_duration_formatted
+      String :very_distracting_duration_formatted
+      String :all_productive_duration_formatted
+      String :all_distracting_duration_formatted
+      String :uncategorized_duration_formatted
+      String :business_duration_formatted
+      String :communication_and_scheduling_duration_formatted
+      String :social_networking_duration_formatted
+      String :design_and_composition_duration_formatted
+      String :entertainment_duration_formatted
+      String :news_duration_formatted
+      String :software_development_duration_formatted
+      String :reference_and_learning_duration_formatted
+      String :shopping_duration_formatted
+      String :utilities_duration_formatted
+    end
+  end
+end
