@@ -1,12 +1,16 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'rufus-scheduler'
-require 'sequel'
+require_relative 'lib/jobs'
+
+# Run all jobs when starting up
+Jobs.rescuetime_daily_summary
 
 scheduler = Rufus::Scheduler.new
 
-scheduler.every '10s' do
-  puts "hello from rufus in docker"
+scheduler.cron '5 0,4 * * *' do
+  Jobs.rescuetime_daily_summary
 end
 
+# Start scheduler
 scheduler.join

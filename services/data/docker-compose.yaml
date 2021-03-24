@@ -17,6 +17,8 @@ services:
     volumes:
       - ./mysql-data:/var/lib/mysql
     restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: warehouse
 
   taskrunner:
     env_file: .env
