@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     concurrent-ruby (1.1.8)
+    dotenv (2.7.6)
     et-orbi (1.2.4)
       tzinfo
     fugit (1.4.2)
@@ -26,6 +27,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv (~> 2.7)
   httparty (~> 0.13.7)
   mysql2 (~> 0.5.2)
   rufus-scheduler (~> 3.7)
@@ -34,3 +36,4 @@ DEPENDENCIES
 
 BUNDLED WITH
    2.1.4
+   
