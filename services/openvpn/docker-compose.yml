@@ -13,8 +13,6 @@ services:
     environment:
       - OPENVPN_PROVIDER=MULLVAD
       - OPENVPN_CONFIG=us_all
-      - OPENVPN_USERNAME=3877357956288621
-      - OPENVPN_PASSWORD=m
       - LOCAL_NETWORK=192.168.20.0/24
       - PUID=1004
       - PGID=1008
