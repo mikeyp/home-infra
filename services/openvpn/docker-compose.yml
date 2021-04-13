@@ -9,7 +9,7 @@ services:
       - 1.0.0.1
       - 8.8.4.4
     volumes:
-      - config:/config
+      - ./config:/config
     environment:
       - OPENVPN_PROVIDER=MULLVAD
       - OPENVPN_CONFIG=us_all
@@ -27,11 +27,3 @@ services:
     image: haugene/transmission-openvpn
     sysctls:
       - net.ipv6.conf.all.disable_ipv6=0
-
-volumes:
-  config:
-    driver: local
-    driver_opts:
-      type: nfs
-      o: nfsvers=4,addr=freenas.local,rw
-      device: ":/mnt/vault/container-storage/transmission"
