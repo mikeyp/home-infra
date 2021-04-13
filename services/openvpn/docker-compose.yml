@@ -4,6 +4,10 @@ services:
     cap_add:
       - NET_ADMIN
     dns: 
+      - 1.1.1.1
+      - 8.8.8.8
+      - 1.0.0.1
+      - 8.8.4.4
     volumes:
       - config:/config
     environment:
