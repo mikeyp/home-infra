@@ -34,4 +34,4 @@ volumes:
     driver_opts:
       type: nfs
       o: nfsvers=4,addr=freenas.local,rw
-      device: ":/mnt/vault/container-storage/transmission/config"
+      device: ":/mnt/vault/container-storage/transmission"
