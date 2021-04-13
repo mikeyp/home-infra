@@ -18,6 +18,7 @@ services:
       - LOCAL_NETWORK=192.168.20.0/24
       - PUID=1004
       - PGID=1008
+      - TZ=America/New_York
     env_file: .env
     logging:
       driver: json-file
