@@ -35,3 +35,12 @@ data.mikeyp.net {
     transparent
   }
 }
+
+# Transmission
+transmission.mikeyp.net {
+  tls mike@mikeyp.net
+  proxy / http://127.0.0.1:9091/ {
+    websocket
+    transparent
+  }
+}

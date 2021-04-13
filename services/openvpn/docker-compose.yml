@@ -1,0 +1,32 @@
+version: '3.3'
+services:
+  transmission-openvpn:
+    cap_add:
+      - NET_ADMIN
+    dns: 
+    volumes:
+      - config:/config
+    environment:
+      - OPENVPN_PROVIDER=MULLVAD
+      - OPENVPN_CONFIG=us_all
+      - OPENVPN_USERNAME=3877357956288621
+      - OPENVPN_PASSWORD=m
+      - LOCAL_NETWORK=192.168.20.0/24
+      - PUID=1004
+      - PGID=1008
+    env_file: .env
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+    ports:
+      - '9091:9091'
+    image: haugene/transmission-openvpn
+
+volumes:
+  config:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: nfsvers=4,addr=freenas.local,rw
+      device: ":/mnt/vault/container-storage/transmission/config"
