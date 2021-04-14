@@ -15,8 +15,6 @@ services:
       - OPENVPN_PROVIDER=MULLVAD
       - OPENVPN_CONFIG=us_all
       - LOCAL_NETWORK=192.168.20.0/24
-      - PUID=1004
-      - PGID=1008
       - TZ=America/New_York
       - TRANSMISSION_WEB_UI=flood-for-transmission
     env_file: .env
