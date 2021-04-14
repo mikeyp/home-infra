@@ -36,4 +36,4 @@ volumes:
     driver_opts:
       type: nfs
       o: nfsvers=4,addr=freenas.local,rw
-      device: ":/mnt/vault/container-storage/homeassistant"
+      device: ":/mnt/vault/media"
