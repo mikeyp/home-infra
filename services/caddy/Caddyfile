@@ -1,5 +1,5 @@
 # Plex reverse proxy - not needed but sometimes useful.
-plex.mikeyp.net {
+http://plex.trst.space, plex.mikeyp.net {
   tls mike@mikeyp.net
   proxy / http://127.0.0.1:32400/ {
     transparent
@@ -8,7 +8,7 @@ plex.mikeyp.net {
 }
 
 # Reverse proxy to Dream Machine setup - one again not required, but useful if ui.com proxy is slow.
-unifi.mikeyp.net {
+http://unifi.trst.space, unifi.mikeyp.net {
   tls mike@mikeyp.net
   proxy / https://setup.ui.com/ {
     websocket
@@ -18,7 +18,7 @@ unifi.mikeyp.net {
 }
 
 # Homeassistant
-home.mikeyp.net {
+http://home.trst.space, home.mikeyp.net {
   tls mike@mikeyp.net
   proxy / http://127.0.0.1:8123/ {
     websocket
@@ -28,7 +28,7 @@ home.mikeyp.net {
 }
 
 # Metabase
-data.mikeyp.net {
+http://data.trst.space, data.mikeyp.net {
   tls mike@mikeyp.net
   proxy / http://127.0.0.1:3000/ {
     websocket
@@ -37,10 +37,11 @@ data.mikeyp.net {
 }
 
 # Transmission
-transmission.mikeyp.net {
+http://transmission.trst.space, transmission.mikeyp.net {
   tls mike@mikeyp.net
   proxy / http://127.0.0.1:9091/ {
     websocket
     transparent
   }
 }
+
