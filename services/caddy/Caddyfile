@@ -45,3 +45,12 @@ http://transmission.trst.space, transmission.mikeyp.net {
   }
 }
 
+# Pi-hole
+http://pihole.trst.space, pihole.mikeyp.net {
+  tls mike@mikeyp.net
+  proxy / http://127.0.0.1:8053/ {
+    websocket
+    transparent
+  }
+}
+
