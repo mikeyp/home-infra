@@ -14,6 +14,7 @@ services:
     env_file: .env
     environment:
       TZ: 'America/New_York'
+      VIRTUAL_HOST: debian
     volumes:
       - './config/etc-pihole:/etc/pihole'
       - './config/etc-dnsmasq.d:/etc/dnsmasq.d'
