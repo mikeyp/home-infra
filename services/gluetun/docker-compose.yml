@@ -16,5 +16,5 @@ services:
       - VPN_SERVICE_PROVIDER=mullvad
       - VPN_TYPE=wireguard
       - TZ=America/New_York
-    env_file: stack.env
+    env_file: ../../stack.env
     restart: always
