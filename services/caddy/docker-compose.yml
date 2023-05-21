@@ -7,7 +7,7 @@ services:
       CADDYPATH: /etc/caddycerts
       ACME_AGREE: 'true'
     volumes:
-      - /data/compose/43/services/caddy/Caddyfile:/etc/caddy/Caddyfile
+      # - /data/compose/43/services/caddy/Caddyfile:/etc/caddy/Caddyfile
       - caddy_config:/config
       - caddy_data:/data
     network_mode: host
