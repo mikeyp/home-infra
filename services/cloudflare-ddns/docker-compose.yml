@@ -6,5 +6,6 @@ services:
     environment:
       ZONE: 'mikeyp.net'
       SUBDOMAIN: 'home'
+    env_file: ../../stack.env
     restart: always
     
