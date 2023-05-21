@@ -1,14 +1,13 @@
 # Plex reverse proxy - not needed but sometimes useful.
-http://plex.trst.space, plex.mikeyp.net {
+https://plex.mikeyp.net {
   tls mike@mikeyp.net
-  proxy / http://127.0.0.1:32400/ {
+  proxy / http://plex.internal.mikeyp.net:32400/ {
     transparent
-    insecure_skip_verify
   }
 }
 
 # Reverse proxy to Dream Machine setup - one again not required, but useful if ui.com proxy is slow.
-http://unifi.trst.space, unifi.mikeyp.net {
+https://unifi.mikeyp.net {
   tls mike@mikeyp.net
   proxy / https://setup.ui.com/ {
     websocket
@@ -18,39 +17,29 @@ http://unifi.trst.space, unifi.mikeyp.net {
 }
 
 # Homeassistant
-http://home.trst.space, home.mikeyp.net {
+https://home.mikeyp.net {
   tls mike@mikeyp.net
-  proxy / http://127.0.0.1:8123/ {
-    websocket
-    transparent
-    insecure_skip_verify
-  }
-}
-
-# Metabase
-http://data.trst.space, data.mikeyp.net {
-  tls mike@mikeyp.net
-  proxy / http://127.0.0.1:3000/ {
+  proxy / http://home-assistant.internal.mikeyp.net:8123/ {
     websocket
     transparent
   }
 }
 
 # Transmission
-http://transmission.trst.space, transmission.mikeyp.net {
+https://transmission.mikeyp.net {
   tls mike@mikeyp.net
-  proxy / http://127.0.0.1:9091/ {
+  proxy / http://docker-01.internal.mikeyp.net:9091/ {
     websocket
     transparent
   }
 }
 
-# Pi-hole
-http://pihole.trst.space, pihole.mikeyp.net {
+# Portainer
+https://portainer.mikeyp.net {
   tls mike@mikeyp.net
-  proxy / http://127.0.0.1:8053/ {
+  proxy / https://docker-01.internal.mikeyp.net:9443/ {
     websocket
     transparent
+    insecure_skip_verify
   }
 }
-

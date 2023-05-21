@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.7'
 services:
   caddy:
     image: abiosoft/caddy
@@ -8,14 +8,5 @@ services:
       ACME_AGREE: 'true'
     volumes:
       - ./Caddyfile:/etc/Caddyfile
-      - ./certs:/etc/caddycerts
     network_mode: host
     restart: always
-
-  
-
-  
-
-  
-
-
