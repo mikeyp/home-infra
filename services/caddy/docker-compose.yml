@@ -4,7 +4,7 @@ services:
     image: caddy:alpine
     container_name: caddy
     volumes:
-      # - /data/compose/43/services/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - /data/compose/48/services/caddy/Caddyfile:/etc/caddy/Caddyfile
       - caddy_config:/config
       - caddy_data:/data
     network_mode: host
