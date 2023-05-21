@@ -10,18 +10,11 @@ services:
       - 8888:8888/tcp # HTTP proxy
       - 8388:8388/tcp # Shadowsocks
       - 8388:8388/udp # Shadowsocks
-      - 8000:8000/tcp # Built-in HTTP control server
       - 9091:9091/tcp # Transmission
-    dns:
-      - 1.1.1.1
-      - 8.8.8.8
-      - 1.0.0.1
-      - 8.8.4.4
-    volumes:
-      - ./config:/gluetun
-    environment:
-      - VPNSP=mullvad
-      - TZ=America/New_York
-    env_file: .env
-    restart: always
 
+    environment:
+      - VPN_SERVICE_PROVIDER=mullvad
+      - VPN_TYPE=wireguard
+      - TZ=America/New_York
+    env_file: stack.env
+    restart: always

@@ -1,18 +1,11 @@
-version: '2'
+version: '3.7'
 services:
-  dyndns:
+  cloudflare-ddns:
     image: "oznu/cloudflare-ddns"
-    container_name: dyndns
-    env_file: .env
+    container_name: cloudflare-ddns
     environment:
       ZONE: 'mikeyp.net'
       SUBDOMAIN: 'home'
+    env_file: stack.env
     restart: always
-
-  
-
-  
-
-  
-
-
+    

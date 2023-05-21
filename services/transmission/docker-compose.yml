@@ -9,16 +9,15 @@ services:
       - PGID=1008
       - TZ=America/New_York
       - TRANSMISSION_WEB_HOME=/combustion-release/ #optional
-    env_file: .env
+    env_file: stack.env
     volumes:
-      - ./config:/config
-      - data:/downloads
+      - media:/downloads
     restart: unless-stopped
 
 volumes:
-  data:
+  media:
     driver: local
     driver_opts:
       type: nfs
-      o: nfsvers=4,addr=freenas.local,rw
+      o: nfsvers=4,addr=freenas.internal.mikeyp.net,rw
       device: ":/mnt/vault/media"
