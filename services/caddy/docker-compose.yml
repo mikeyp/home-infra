@@ -7,6 +7,7 @@ services:
       CADDYPATH: /etc/caddycerts
       ACME_AGREE: 'true'
     volumes:
-      - ../../Caddyfile:/etc/Caddyfile
+      - caddy_config:/config
+      - caddy_data:/data
     network_mode: host
     restart: always
