@@ -3,6 +3,7 @@ services:
   cloudflare-ddns:
     image: "oznu/cloudflare-ddns"
     container_name: cloudflare-ddns
+    network_mode: bridge
     environment:
       ZONE: 'mikeyp.net'
       SUBDOMAIN: 'home'
