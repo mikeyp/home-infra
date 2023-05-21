@@ -11,3 +11,8 @@ services:
       - caddy_data:/data
     network_mode: host
     restart: always
+
+volumes:
+  caddy_data:
+    external: true
+  caddy_config:
