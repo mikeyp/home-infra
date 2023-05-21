@@ -1,9 +1,9 @@
-version: "3.7"
+version: '3.7'
 services:
   transmission:
     image: ghcr.io/linuxserver/transmission
     container_name: transmission
-    network_mode: "container:gluetun"
+    network_mode: 'container:gluetun'
     environment:
       - PUID=1004
       - PGID=1008
@@ -20,4 +20,4 @@ volumes:
     driver_opts:
       type: nfs
       o: nfsvers=4,addr=freenas.internal.mikeyp.net,rw
-      device: ":/mnt/vault/media"
+      device: ':/mnt/vault/media'
