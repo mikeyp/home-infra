@@ -7,6 +7,6 @@ services:
     environment:
       ZONE: 'mikeyp.net'
       SUBDOMAIN: 'home'
-    env_file: ../../stack.env
+      API_KEY: ${API_KEY}
     restart: always
     
