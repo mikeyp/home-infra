@@ -5,10 +5,11 @@ services:
     container_name: transmission
     network_mode: 'container:gluetun'
     environment:
-      - PUID=1004
-      - PGID=1008
-      - TZ=America/New_York
-    env_file: ../../stack.env
+      PUID: 1004
+      PGID: 1008
+      TZ: America/New_York
+      USER: ${USER}
+      PASS: ${PASS}
     volumes:
       - media:/downloads
     restart: unless-stopped
