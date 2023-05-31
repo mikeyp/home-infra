@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudflare-ddns
+  namespace: cloudflare-ddns
+  labels:
+    app: cloudflare-ddns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudflare-ddns
+  template:
+    metadata:
+      labels:
+        app: cloudflare-ddns
+    spec:
+      containers:
+        - name: cloudflare-ddns
+          image: oznu/cloudflare-ddns:latest
+          envFrom:
+            - secretRef:
+                name: cloudflare-ddns-config
+          imagePullPolicy: Always
+      restartPolicy: Always
