@@ -1,0 +1,79 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: plex-pv
+  namespace: plex
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: ""
+  resources:
+    requests:
+      storage: 10Gi
+  volumeName: plex-pv
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plex
+  namespace: plex
+  labels:
+    app: plex
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: plex
+  template:
+    metadata:
+      labels:
+        app: plex
+    spec:
+      containers:
+        - name: plex
+          image: plexinc/pms-docker:latest
+          envFrom:
+            - secretRef:
+                name: plex-config
+          imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: plex-config
+          env:
+            - name: PLEX_UID
+              value: '1001'
+            - name: PLEX_GID
+              value: '1003'
+            - name: TZ
+              value: "America/New_York"
+          volumeMounts:
+            - name: media
+              mountPath: /data
+            - name: config
+              mountPath: /config
+      volumes:
+        - name: media
+          nfs:
+            server: freenas.internal.mikeyp.net
+            path: /mnt/vault/media
+            readOnly: true
+        - name: config
+          persistentVolumeClaim:
+            claimName: plex-pv
+      restartPolicy: Always
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: plex
+  namespace: plex
+  labels:
+    app: plex
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 32400
+  selector:
+    app: plex
+  type: LoadBalancer
