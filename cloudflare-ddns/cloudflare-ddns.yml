@@ -21,5 +21,10 @@ spec:
           envFrom:
             - secretRef:
                 name: cloudflare-ddns-config
+          env:
+            - name: SUBDOMAIN
+              value: "home"
+            - name: ZONE
+              value: "mikeyp.net"
           imagePullPolicy: Always
       restartPolicy: Always
