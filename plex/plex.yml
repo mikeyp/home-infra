@@ -10,7 +10,7 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  volumeName: plex-pv
+  volumeName: plex-config-pv
 ---
 apiVersion: apps/v1
 kind: Deployment
