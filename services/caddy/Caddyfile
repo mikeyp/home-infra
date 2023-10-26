@@ -1,13 +1,13 @@
 # Plex reverse proxy - not needed but sometimes useful.
-https://plex.mikeyp.net {
+https://plex.prickels.casa {
   tls mike@mikeyp.net
-  proxy / http://plex.internal.mikeyp.net:32400/ {
+  proxy / http://192.168.60.203/ {
     transparent
   }
 }
 
 # Reverse proxy to Dream Machine setup - one again not required, but useful if ui.com proxy is slow.
-https://unifi.mikeyp.net {
+https://unifi.prickels.casa {
   tls mike@mikeyp.net
   proxy / https://setup.ui.com/ {
     websocket
@@ -17,29 +17,20 @@ https://unifi.mikeyp.net {
 }
 
 # Homeassistant
-https://home.mikeyp.net {
+https://home.prickels.casa {
   tls mike@mikeyp.net
-  proxy / http://home-assistant.internal.mikeyp.net:8123/ {
+  proxy / http://home.inside.prickels.casa:8123/ {
     websocket
     transparent
   }
 }
 
 # Transmission
-https://transmission.mikeyp.net {
-  tls mike@mikeyp.net
-  proxy / http://docker-01.internal.mikeyp.net:9091/ {
-    websocket
-    transparent
-  }
-}
+# https://transmission.mikeyp.net {
+  # tls mike@mikeyp.net
+  # proxy / http://docker-01.internal.mikeyp.net:9091/ {
+    # websocket
+    # transparent
+  # }
+# }
 
-# Portainer
-https://portainer.mikeyp.net {
-  tls mike@mikeyp.net
-  proxy / https://docker-01.internal.mikeyp.net:9443/ {
-    websocket
-    transparent
-    insecure_skip_verify
-  }
-}
