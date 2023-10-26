@@ -23,8 +23,8 @@ spec:
                 name: cloudflare-ddns-config
           env:
             - name: SUBDOMAIN
-              value: "home"
+              value: "ddns"
             - name: ZONE
-              value: "mikeyp.net"
+              value: "prickels.casa"
           imagePullPolicy: Always
       restartPolicy: Always

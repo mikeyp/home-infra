@@ -8,6 +8,6 @@ metadata:
   namespace: cloudflare-ddns
 stringData:
   API_KEY: 'API_KEY_GOES_HERE'
-  ZONE: mikeyp.net
-  SUBDOMAIN: home
+  ZONE: prickels.casa
+  SUBDOMAIN: ddns
 ```
