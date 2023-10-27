@@ -1,13 +1,13 @@
 # Plex reverse proxy - not needed but sometimes useful.
 https://plex.prickels.casa {
   tls mike@mikeyp.net
-  reverse_proxy / http://192.168.60.203/
+  reverse_proxy http://192.168.60.203
 }
 
 # Reverse proxy to Dream Machine setup - one again not required, but useful if ui.com proxy is slow.
 https://unifi.prickels.casa {
   tls mike@mikeyp.net
-  reverse_proxy / https://setup.ui.com/ {
+  reverse_proxy https://setup.ui.com {
     transport http {
       tls_insecure_skip_verify
     }
@@ -17,7 +17,7 @@ https://unifi.prickels.casa {
 # Homeassistant
 https://home.prickels.casa {
   tls mike@mikeyp.net
-  reverse_proxy / http://home.inside.prickels.casa:8123/
+  reverse_proxy http://home.inside.prickels.casa:8123
 }
 
 # Transmission
