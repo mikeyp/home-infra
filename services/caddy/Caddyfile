@@ -1,7 +1,7 @@
 # Plex reverse proxy - not needed but sometimes useful.
 https://plex.prickels.casa {
   tls mike@mikeyp.net
-  reverse_proxy http://192.168.60.203
+  reverse_proxy http://192.168.60.202
 }
 
 # Reverse proxy to Dream Machine setup - one again not required, but useful if ui.com proxy is slow.
