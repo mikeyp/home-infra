@@ -54,8 +54,8 @@ spec:
       volumes:
         - name: media
           nfs:
-            server: freenas.internal.mikeyp.net
-            path: /mnt/vault/media
+            server: truenas.inside.prickels.casa
+            path: /mnt/tank/media
             readOnly: true
         - name: config
           persistentVolumeClaim:

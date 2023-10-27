@@ -6,9 +6,9 @@ metadata:
     type: nfs
 spec:
   capacity:
-    storage: 100Gi
+    storage: 40Gi
   accessModes:
     - ReadWriteMany
   nfs:
-    server: 'freenas.internal.mikeyp.net'
-    path: '/mnt/vault/container-storage/plex'
+    server: 'truenas.inside.prickels.casa'
+    path: '/mnt/tank/container-storage/plex'
