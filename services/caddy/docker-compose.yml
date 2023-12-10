@@ -2,6 +2,7 @@ version: '3.9'
 services:
   caddy:
     build: ./
+    env_file: .env
     container_name: caddy
     cap_add:
       - NET_ADMIN
