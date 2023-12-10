@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   caddy:
-    image: caddy:alpine
+    build: ./
     container_name: caddy
     cap_add:
       - NET_ADMIN
