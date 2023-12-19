@@ -34,6 +34,14 @@ https://thelounge.inside.prickels.casa {
   reverse_proxy http://truenas.inside.prickels.casa:10061
 }
 
+# Haste
+https://haste.inside.prickels.casa {
+  tls mike@mikeyp.net {
+    dns cloudflare {env.CF_API_TOKEN}
+  }
+  reverse_proxy http://192.168.60.190:7777
+}
+
 # Transmission
 # https://transmission.mikeyp.net {
   # tls mike@mikeyp.net
