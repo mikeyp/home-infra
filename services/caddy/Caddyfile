@@ -42,6 +42,30 @@ https://haste.inside.prickels.casa {
   reverse_proxy http://192.168.60.190:7777
 }
 
+# prowlarr
+https://prowlarr.inside.prickels.casa {
+  tls mike@mikeyp.net {
+    dns cloudflare {env.CF_API_TOKEN}
+  }
+  reverse_proxy http://192.168.60.190:9696
+}
+
+# radarr
+https://radarr.inside.prickels.casa {
+  tls mike@mikeyp.net {
+    dns cloudflare {env.CF_API_TOKEN}
+  }
+  reverse_proxy http://192.168.60.190:7878
+}
+
+# transmission
+https://transmission.inside.prickels.casa {
+  tls mike@mikeyp.net {
+    dns cloudflare {env.CF_API_TOKEN}
+  }
+  reverse_proxy http://192.168.60.190:10109
+}
+
 # Transmission
 # https://transmission.mikeyp.net {
   # tls mike@mikeyp.net
