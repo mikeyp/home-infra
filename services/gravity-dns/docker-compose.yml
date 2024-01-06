@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  gravity:
+    hostname: gravity.inside.prickels.casa
+    image: ghcr.io/beryju/gravity:stable
+    container_name: gravity
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - $PWD/gravity_data:/data
+    restart: always
