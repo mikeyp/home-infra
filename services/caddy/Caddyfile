@@ -3,7 +3,7 @@ https://plex.prickels.casa {
   tls mike@mikeyp.net {
     dns cloudflare {env.CF_API_TOKEN}
   }
-  reverse_proxy http://truenas.inside.prickels.casa:32400
+  reverse_proxy http://192.168.60.190:32400
 }
 
 # Reverse proxy to Dream Machine setup - one again not required, but useful if ui.com proxy is slow.
@@ -23,7 +23,7 @@ https://home.prickels.casa {
   tls mike@mikeyp.net {
     dns cloudflare {env.CF_API_TOKEN}
   }
-  reverse_proxy http://home.inside.prickels.casa:8123
+  reverse_proxy http://homeassistant.local:8123
 }
 
 # TheLounge chat
@@ -31,7 +31,7 @@ https://thelounge.inside.prickels.casa {
   tls mike@mikeyp.net {
     dns cloudflare {env.CF_API_TOKEN}
   }
-  reverse_proxy http://truenas.inside.prickels.casa:10061
+  reverse_proxy http://192.168.60.190:10061
 }
 
 # Haste
@@ -65,13 +65,3 @@ https://transmission.inside.prickels.casa {
   }
   reverse_proxy http://192.168.60.190:10109
 }
-
-# Transmission
-# https://transmission.mikeyp.net {
-  # tls mike@mikeyp.net
-  # proxy / http://docker-01.internal.mikeyp.net:9091/ {
-    # websocket
-    # transparent
-  # }
-# }
-
