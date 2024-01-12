@@ -58,6 +58,14 @@ https://radarr.inside.prickels.casa {
   reverse_proxy http://192.168.60.190:7878
 }
 
+# sonarr
+https://sonarr.inside.prickels.casa {
+  tls mike@mikeyp.net {
+    dns cloudflare {env.CF_API_TOKEN}
+  }
+  reverse_proxy http://192.168.60.190:8989
+}
+
 # transmission
 https://transmission.inside.prickels.casa {
   tls mike@mikeyp.net {
