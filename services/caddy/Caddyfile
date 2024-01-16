@@ -73,3 +73,11 @@ https://transmission.inside.prickels.casa {
   }
   reverse_proxy http://192.168.60.190:10109
 }
+
+# sabnzbd
+https://sabnzbd.inside.prickels.casa {
+  tls mike@mikeyp.net {
+    dns cloudflare {env.CF_API_TOKEN}
+  }
+  reverse_proxy http://192.168.60.190:10097
+}
