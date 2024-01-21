@@ -12,7 +12,7 @@ root: ~/projects/home-infra
 # Project hooks
 
 # Runs on project start, always
-on_project_start: open "http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy"
+# on_project_start: open "http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy"
 
 # Run on project start, the first time
 # on_project_first_start: command
@@ -27,7 +27,7 @@ on_project_start: open "http://localhost:8001/api/v1/namespaces/kubernetes-dashb
 # on_project_stop: docker-compose --env-file ./database/.env stop
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: fnm install
+pre_window: export KUBECONFIG=/Users/mdp/projects/home-infra/config/rke2.yaml 
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf

@@ -81,3 +81,19 @@ https://sabnzbd.inside.prickels.casa {
   }
   reverse_proxy http://192.168.60.190:10097
 }
+
+# readarr
+https://readarr.inside.prickels.casa {
+  tls mike@mikeyp.net {
+    dns cloudflare {env.CF_API_TOKEN}
+  }
+  reverse_proxy http://192.168.60.190:8787
+}
+
+# lidarr
+https://lidarr.inside.prickels.casa {
+  tls mike@mikeyp.net {
+    dns cloudflare {env.CF_API_TOKEN}
+  }
+  reverse_proxy http://192.168.60.190:8686
+}
