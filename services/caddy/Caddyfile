@@ -6,12 +6,24 @@ https://plex.prickels.casa {
   reverse_proxy http://192.168.60.190:32400
 }
 
-# Reverse proxy to Dream Machine setup - one again not required, but useful if ui.com proxy is slow.
+# Reverse proxy to Dream Machine setup - once again not required, but useful if ui.com proxy is slow.
 https://unifi.prickels.casa {
   tls mike@mikeyp.net {
     dns cloudflare {env.CF_API_TOKEN}
   }
   reverse_proxy https://setup.ui.com {
+    transport http {
+      tls_insecure_skip_verify
+    }
+  }
+}
+
+# Reverse proxy to Dream Machine setup - once again not required, but useful if ui.com proxy is slow.
+https://rancher.inside.prickels.casa {
+  tls mike@mikeyp.net {
+    dns cloudflare {env.CF_API_TOKEN}
+  }
+  reverse_proxy https://10.1.0.207 {
     transport http {
       tls_insecure_skip_verify
     }
