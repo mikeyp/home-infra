@@ -43,7 +43,7 @@ https://xo.inside.prickels.casa {
 }
 
 # Gravity UI 
-https://xo.inside.prickels.casa {
+https://gravity-ui.inside.prickels.casa {
   tls mike@mikeyp.net {
     dns cloudflare {env.CF_API_TOKEN}
   }
