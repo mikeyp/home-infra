@@ -18,7 +18,7 @@ https://unifi.prickels.casa {
   }
 }
 
-# Reverse proxy to Dream Machine setup - once again not required, but useful if ui.com proxy is slow.
+# Rancher LB exposed through MetalLB 
 https://rancher.inside.prickels.casa {
   tls mike@mikeyp.net {
     dns cloudflare {env.CF_API_TOKEN}
@@ -27,6 +27,27 @@ https://rancher.inside.prickels.casa {
     transport http {
       tls_insecure_skip_verify
     }
+  }
+}
+
+# Xen Orchestra hosted on TrueNAS 
+https://xo.inside.prickels.casa {
+  tls mike@mikeyp.net {
+    dns cloudflare {env.CF_API_TOKEN}
+  }
+  reverse_proxy https://192.168.60.190:10324 {
+    transport http {
+      tls_insecure_skip_verify
+    }
+  }
+}
+
+# Gravity UI 
+https://xo.inside.prickels.casa {
+  tls mike@mikeyp.net {
+    dns cloudflare {env.CF_API_TOKEN}
+  }
+  reverse_proxy http://10.1.0.2:8008 {
   }
 }
 
