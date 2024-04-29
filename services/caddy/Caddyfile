@@ -31,7 +31,7 @@ https://rancher.inside.prickels.casa {
 }
 
 # Xen Orchestra hosted on TrueNAS 
-https://cloud.inside.prickels.casa {
+https://xo-ui.inside.prickels.casa {
   tls mike@mikeyp.net {
     dns cloudflare {env.CF_API_TOKEN}
   }
