@@ -31,11 +31,11 @@ https://rancher.inside.prickels.casa {
 }
 
 # Xen Orchestra hosted on TrueNAS 
-https://xo.inside.prickels.casa {
+https://cloud.inside.prickels.casa {
   tls mike@mikeyp.net {
     dns cloudflare {env.CF_API_TOKEN}
   }
-  reverse_proxy https://192.168.60.190:10324 {
+  reverse_proxy https://xo.inside.prickels.casa {
     transport http {
       tls_insecure_skip_verify
     }
