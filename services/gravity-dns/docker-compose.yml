@@ -3,6 +3,7 @@ services:
   gravity:
     hostname: gravity.inside.prickels.casa
     image: ghcr.io/beryju/gravity:stable
+    pull_policy: always
     container_name: gravity
     network_mode: host
     cap_add:

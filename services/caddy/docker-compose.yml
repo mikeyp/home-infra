@@ -2,6 +2,7 @@ version: '3.9'
 services:
   caddy:
     build: ./
+    pull_policy: always
     env_file: .env
     container_name: caddy
     cap_add:
